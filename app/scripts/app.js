@@ -29,6 +29,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/cep', {
+        templateUrl: 'views/cep.html',
+        controller: 'CepCtrl',
+        controllerAs: 'cep'
+      })
       .otherwise({
         redirectTo: '/'
       });
