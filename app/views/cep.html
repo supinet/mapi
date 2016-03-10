@@ -1,6 +1,61 @@
-<p>teste</p>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mailApi</title>
+  </head>
+  <body ng-app="mapiApp" ng-controller="CepCtrl">
+    <div class="container">
+    
+    <div class="panel panel-default">
 
-<table class="table table-hover">
-	<th>CEP</th>
-</tr>
-</table>
+        <div class="panel-heading">
+            <h1 class="panel-title">Busca CEP <a href="http://cep.correiocontrol.com.br/{{ local_encontrado.cep }}.json">http://cep.correiocontrol.com.br/{{ local_encontrado.cep }}.json</a></h1>
+        </div>
+            
+        <div class="panel-body">
+           <form class="form-horizontal">
+
+              <div class="form-group">
+                <label class="control-label col-sm-2 col-lg-2">CEP</label>
+                <div class="col-sm-6 col-lg-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" ng-model="cep" ng-keypress="enter($event)">
+                    <button class="btn btn-primary" ng-click="busca()">Buscar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2 col-lg-2">Logradouro</label>
+                <div class="col-sm-2 col-lg-4">
+                  <input type="text" class="form-control" ng-model="local_encontrado.logradouro" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2 col-lg-2">Bairro</label>
+                <div class="col-sm-2 col-lg-4">
+                  <input type="text" class="form-control" ng-model="local_encontrado.bairro" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2 col-lg-2">Cidade</label>
+                <div class="col-sm-6 col-lg-4">
+                  <input type="text" class="form-control" ng-model="local_encontrado.localidade" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2 col-lg-2">Estado</label>
+                <div class="col-sm-6 col-lg-4">
+                  <input type="text" class="form-control" ng-model="local_encontrado.uf" />
+                </div>
+              </div>
+            </form>      
+        </div>
+    </div>
+    </div>
+  </body>
+</html>

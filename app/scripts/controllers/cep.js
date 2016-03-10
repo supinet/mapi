@@ -7,14 +7,24 @@
  * # CepCtrl
  * Controller of the mapiApp
  */
-angular.module('mapiApp')
-  .controller('CepCtrl', function($scope, $http) {
-    $scope.pesquisaEnderecoPorCep = function() {
-        $http.get('http://correiosapi.apphb.com/cep/69058060').success(function(cep) {
-            $scope.cep = cep;
-        }).error(function(erro){
-            alert(erro);
+
+
+angular.module('mapiApp').controller('CepCtrl', function CepCtrl($http, $scope){
+    $scope.busca = function(){
+        $http.get('http://cep.correiocontrol.com.br/'+ $scope.cep + '.json')
+        //$http.get('http://correiosapi.apphb.com/cep/'+ $scope.cep)
+        .success(function(local){
+            $scope.local_encontrado = local;
+        console.log(local);
+        })
+        .error(function(e){
+        console.log("Erro");
+            alert("Este CEP não existe!");
         });
-    } 
-  $scope.pesquisaEnderecoPorCep();
+    };
+    $scope.enter = function(e){
+        if(e.keyCode == 13){
+            $scope.busca();
+        };
+    };
 });
