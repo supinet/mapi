@@ -10,8 +10,8 @@ import mapi.model.dao.EnderecoDao;
 import mapi.model.domain.Endereco;
 
 public class EnderecoDaoImp implements EnderecoDao {
-	
-	@PersistenceContext(unitName="mapiPU")
+
+	@PersistenceContext(unitName = "mapiPU")
 	private EntityManager entityManager;
 
 	@SuppressWarnings("unchecked")
@@ -37,6 +37,12 @@ public class EnderecoDaoImp implements EnderecoDao {
 	public void excluir(Endereco endereco) {
 		Endereco enderecoMerge = entityManager.merge(endereco);
 		entityManager.remove(enderecoMerge);
+	}
+
+	@Override
+	public Endereco getEnderecoPorCodigo(String codigo) {
+		return this.entityManager.createQuery("from Endereco where codigo = :codigo ", Endereco.class)
+				.setParameter("codigo", codigo).getSingleResult();
 	}
 
 }

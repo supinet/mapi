@@ -13,7 +13,7 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
 
     //urlEndereco = 'http://localhost:8080/mapi/rs/endereco';
 
-    $scope.busca = function(){
+    $scope.buscaCepWeb = function(){
         $http.get('http://cep.correiocontrol.com.br/'+ $scope.cep.codigo + '.json')
         //$http.get('http://correiosapi.apphb.com/cep/'+ $scope.cep.cep)
         .success(function(local){
@@ -33,7 +33,7 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
     };
 
     $scope.pesquisarEndereco = function() {
-        $http.get('http://localhost:8080/mapi/rs/endereco').success(function(endereco) {
+        $http.get('http://localhost:8080/mapi/endereco').success(function(endereco) {
             $scope.endereco = endereco;
         }).error(function(erro) {
             alert(erro);
@@ -41,15 +41,15 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
     }
 
     $scope.salvar = function() {
-        if ($scope.cep.codigo == '') {
-            $http.post('http://localhost:8080/mapi/rs/endereco', $scope.endereco).success(function(endereco) {
+        if ($scope.cep.codigo != '') {
+            $http.post('http://localhost:8080/mapi/endereco', $scope.endereco).success(function(endereco) {
                 $scope.local_encontrado.push($scope.endereco);
                 $scope.novo();
             }).error(function(erro){
                 alert(erro);
             });
         } else {
-            $http.put('http://localhost:8080/mapi/rs/endereco', $scope.endereco).success(function(endereco) {
+            $http.put('http://localhost:8080/mapi/endereco', $scope.endereco).success(function(endereco) {
                 $scope.pesquisarEndereco();
                 $scope.novo();
             }).error(function(erro) {
@@ -62,7 +62,7 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
         if ($scope.cep.codigo == '') {
             alert('Selecione o endereco');
         } else {
-            urlExcluir = 'http://localhost:8080/mapi/rs/endereco' + "/" + $scope.cep.codigo;
+            urlExcluir = 'http://localhost:8080/mapi/endereco' + "/" + $scope.cep.codigo;
             $http.delete(urlExcluir).success(function() {
                 $scope.pesquisarEndereco();
                 $scope.novo();

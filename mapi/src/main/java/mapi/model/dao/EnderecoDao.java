@@ -5,6 +5,8 @@ import java.util.List;
 import mapi.model.domain.Endereco;
 
 public interface EnderecoDao {
+	
+	public Endereco getEnderecoPorCodigo(String codigo);
 
 	public List<Endereco> getEnderecos();
 	
