@@ -16,4 +16,6 @@ public interface EnderecoDao {
 	
 	public void excluir (Endereco endereco);
 	
+	public Endereco getEndereco(Endereco id);
+	
 }

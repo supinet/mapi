@@ -45,4 +45,9 @@ public class EnderecoDaoImp implements EnderecoDao {
 				.setParameter("codigo", codigo).getSingleResult();
 	}
 
+	@Override
+	public Endereco getEndereco(Endereco id) {
+		return this.entityManager.find(Endereco.class, id);
+	}
+
 }

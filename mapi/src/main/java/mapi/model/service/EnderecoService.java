@@ -15,5 +15,7 @@ public interface EnderecoService {
 	public void atualizar(Endereco endereco);
 
 	public void excluir(Endereco endereco);
+	
+	public Endereco getEndereco(Endereco id);
 
 }

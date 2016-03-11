@@ -20,7 +20,7 @@ public class Endereco implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "codigo", length = 255, nullable = false)
 	private String codigo;
 
