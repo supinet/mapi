@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
+<html ng-app="mapiApp">
   <head>
     <meta charset="utf-8">
     <title>mailApi</title>
   </head>
-  <body ng-app="mapiApp" ng-controller="CepCtrl">
+  <body ng-controller="CepCtrl">
     <div class="container-fluid">
       <div class="row">
         <fieldset>
@@ -52,8 +52,33 @@
                   <button type="button" class="btn btn-info" ng-click="novo();">Novo</button>
                   <button type="submit" class="btn btn-default" ng-click="salvar();">Salvar</button>
                 </div>
-              </form> <!--end body -->
-            </div> <!--end body -->
+              </form> <!--end form body -->
+            </div> <!--end panel body -->
+            <div class="panel-heading">
+              <h1 class="panel-title">CEPs - mapiApp</h1>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                <th>id</th>
+                <th>CEP</th>
+                <th>Logradouro</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Ação</th>
+                <tr ng-repeat="cepTabela in enderecos"
+                  ng-click="selecionaCep(cepTabela);">
+                  <td>{{cepTabela.id}}</td>
+                  <td>{{cepTabela.codigo}}</td>
+                  <td>{{cepTabela.logradouro}}</td>
+                  <td>{{cepTabela.bairro}}</td>
+                  <td>{{cepTabela.cidade}}</td>
+                  <td>{{cepTabela.estado}}</td>
+                  <td><button type="button" class="btn btn-danger"
+                      ng-click="excluir();">Excluir</button></td>
+                </tr>
+              </table>
+            </div> <!-- end panel body mapiApp-->
         </fieldset>
       </div> <!--end row -->
     </div> <!--end container -->

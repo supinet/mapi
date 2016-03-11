@@ -27,6 +27,7 @@
 
 		<!-- Dependencies -->
 		<version.dependency.javaee>7.0</version.dependency.javaee>
+		<version.dependency.resteasy>3.0.16.Final</version.dependency.resteasy>
 	</properties>
 
 	<build>
@@ -95,6 +96,12 @@
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>${version.dependency.javaee}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${version.dependency.resteasy}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

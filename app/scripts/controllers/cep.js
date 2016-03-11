@@ -8,14 +8,15 @@
  * Controller of the mapiApp
  */
 
-
 angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
 
-    //urlEndereco = 'http://localhost:8080/mapi/rs/endereco';
+    var urlMapp = 'http://localhost:8080/mapi/endereco';
+    //var urlWebCep = 'http://correiosapi.apphb.com/cep/';
+    var urlWebCep = 'http://cep.correiocontrol.com.br/';
 
     $scope.buscaCepWeb = function(){
-        $http.get('http://cep.correiocontrol.com.br/'+ $scope.cep.codigo + '.json')
-        //$http.get('http://correiosapi.apphb.com/cep/'+ $scope.cep.cep)
+        $http.get(urlWebCep + $scope.cep.codigo + '.json')
+        //$http.get(urlWebCep + $scope.cep.codigo)
         .success(function(local){
             $scope.local_encontrado = local;
         console.log(local);
@@ -33,26 +34,32 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
     };
 
     $scope.pesquisarEndereco = function() {
-        $http.get('http://localhost:8080/mapi/endereco').success(function(endereco) {
-            $scope.endereco = endereco;
+        $http.get(urlMapp).success(function(endereco) {
+            $scope.enderecos = endereco;
+            console.log(endereco);
         }).error(function(erro) {
+            console.log(endereco);
             alert(erro);
         });
     }
 
     $scope.salvar = function() {
-        if ($scope.cep.codigo != '') {
-            $http.post('http://localhost:8080/mapi/endereco', $scope.endereco).success(function(endereco) {
-                $scope.local_encontrado.push($scope.endereco);
+        if ($scope.local_encontrado.codigo != '') {
+            $http.post(urlMapp, $scope.local_encontrado).success(function(local_encontrado) {
+                $scope.enderecos.push($scope.local_encontrado);
                 $scope.novo();
+                console.log(local_encontrado)
             }).error(function(erro){
+                console.log(local_encontrado)
                 alert(erro);
             });
         } else {
-            $http.put('http://localhost:8080/mapi/endereco', $scope.endereco).success(function(endereco) {
+            $http.put(urlMapp, $scope.local_encontrado).success(function(local_encontrado) {
                 $scope.pesquisarEndereco();
                 $scope.novo();
+                console.log(local_encontrado)
             }).error(function(erro) {
+                console.log(local_encontrado)
                 alert(erro);
             });
         }
@@ -61,9 +68,8 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
     $scope.excluir = function() {
         if ($scope.cep.codigo == '') {
             alert('Selecione o endereco');
-        } else {
-            urlExcluir = 'http://localhost:8080/mapi/endereco' + "/" + $scope.cep.codigo;
-            $http.delete(urlExcluir).success(function() {
+        } else {            
+            $http.delete('http://localhost:8080/mapi/endereco' + "/" + $scope.cep.codigo).success(function() {
                 $scope.pesquisarEndereco();
                 $scope.novo();
             }).error(function (erro) {
@@ -77,4 +83,9 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
     }
 
     $scope.pesquisarEndereco();
+
+    $scope.novo = function() {
+        $scope.endereco = "";
+    }
+    
 });

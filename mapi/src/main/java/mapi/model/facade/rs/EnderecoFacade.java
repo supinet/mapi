@@ -28,7 +28,7 @@ public class EnderecoFacade {
 
 	@GET
 	@Path("/{codigo}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	public Endereco getEnderecoPorCodigo(@PathParam("codigo") String codigo) {
 		return this.enderecoService.getEnderecoPorCodigo(codigo);
 	}
@@ -39,7 +39,7 @@ public class EnderecoFacade {
 	}
 
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	public List<Endereco> getEnderecos() {
 		return this.enderecoService.getEnderecos();
 	}
