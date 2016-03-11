@@ -78,14 +78,14 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
         }
     }
 
-    $scope.selecionaEndereco = function(endereco) {
-        $scope.endereco = endereco;
+    $scope.selecionaEndereco = function(local_encontrado) {
+        $scope.local_encontrado = local_encontrado;
     }
 
     $scope.pesquisarEndereco();
 
     $scope.novo = function() {
-        $scope.endereco = "";
+        $scope.local_encontrado = "";
     }
     
 });

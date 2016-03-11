@@ -66,16 +66,17 @@
                 <th>Cidade</th>
                 <th>Estado</th>
                 <th>Ação</th>
-                <tr ng-repeat="cepTabela in enderecos"
-                  ng-click="selecionaCep(cepTabela);">
+                <tr ng-repeat="cepTabela in enderecos">
                   <td>{{cepTabela.id}}</td>
                   <td>{{cepTabela.codigo}}</td>
                   <td>{{cepTabela.logradouro}}</td>
                   <td>{{cepTabela.bairro}}</td>
                   <td>{{cepTabela.cidade}}</td>
                   <td>{{cepTabela.estado}}</td>
-                  <td><button type="button" class="btn btn-danger"
-                      ng-click="excluir();">Excluir</button></td>
+                  <td>
+                  <button type="button" class="btn btn-danger" ng-click="excluir();">Excluir</button>
+                  <button type="button" class="btn btn-warning" ng-click="selecionaEndereco(cepTabela);">Editar</button>
+                  </td>
                 </tr>
               </table>
             </div> <!-- end panel body mapiApp-->
