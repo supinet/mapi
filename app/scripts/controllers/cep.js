@@ -61,7 +61,7 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
     }
 
     $scope.salvar = function() {
-        if ($scope.cep.codigo != '') {
+        if ($scope.local_encontrado.id == '') {
             $http.post(urlMapp, $scope.local_encontrado).success(function(local) {
                 //$scope.enderecos.push($scope.local_encontrado);
                 $scope.pesquisarEndereco();
@@ -83,11 +83,11 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
         }
     }
 
-    $scope.excluir = function() {
-        if ($scope.cep.codigo == '') {
+    $scope.excluir = function(id) {
+        if (id == '') {
             alert('Selecione o endereco');
         } else {            
-            $http.delete(urlMapp + "/" + $scope.local_encontrado.id).success(function() {
+            $http.delete(urlMapp + "/" + id).success(function() {
                 $scope.pesquisarEndereco();
                 $scope.novo();
             }).error(function (erro) {
@@ -98,12 +98,14 @@ angular.module('mapiApp').controller('CepCtrl', function($http, $scope){
 
     $scope.selecionaEndereco = function(local_encontrado) {
         $scope.local_encontrado = local_encontrado;
+        $scope.endereco = local_encontrado;
     }
 
     $scope.pesquisarEndereco();
 
     $scope.novo = function() {
         $scope.local_encontrado = "";
+        $scope.cep.codigo = "";
     }
     
 });

@@ -85,10 +85,10 @@
                   <td>{{cepTabela.cidade}}</td>
                   <td>{{cepTabela.estado}}</td>
                   <td>
-                    <button type="button" ng-click="excluir();" class="btn btn-xs btn-danger">
-                      <span class="glyphicon glyphicon-remove"></span></button>
                     <button type="button" ng-click="selecionaEndereco(cepTabela);" class="btn btn-xs btn-warning">
                       <span class="glyphicon glyphicon-edit"></span></button>
+                    <a button type="button" ng-click="excluir(cepTabela.id);" class="btn btn-xs btn-danger">
+                      <span class="glyphicon glyphicon-remove"></span></button></a>
                   </td>
                 </tr>
               </table>
