@@ -6,7 +6,7 @@ import mapi.model.domain.Endereco;
 
 public interface EnderecoDao {
 	
-	public Endereco getEnderecoPorCodigo(String codigo);
+	public Endereco getEnderecoPorCodigo(String cep);
 
 	public List<Endereco> getEnderecos();
 	

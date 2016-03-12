@@ -9,12 +9,23 @@ import javax.ws.rs.core.Feature;
 import javax.ws.rs.core.FeatureContext;
 import javax.ws.rs.ext.Provider;
 
-import org.jboss.resteasy.plugins.interceptors.CorsFilter;
-
 @Provider
 public class CorsFeature implements Feature, ContainerResponseFilter {
 
 	@Override
+	public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext)
+			throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean configure(FeatureContext context) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/*@Override
 	public boolean configure(FeatureContext context) {
 		CorsFilter corsFilter = new CorsFilter();
 		corsFilter.getAllowedOrigins().add("*");
@@ -30,5 +41,5 @@ public class CorsFeature implements Feature, ContainerResponseFilter {
 		responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
 		responseContext.getHeaders().add("Access-Control-Allow-Headers", "Content-Type");
 
-	}
+	}*/
 }

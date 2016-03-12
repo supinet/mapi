@@ -40,9 +40,9 @@ public class EnderecoDaoImp implements EnderecoDao {
 	}
 
 	@Override
-	public Endereco getEnderecoPorCodigo(String codigo) {
-		return this.entityManager.createQuery("from Endereco where codigo = :codigo ", Endereco.class)
-				.setParameter("codigo", codigo).getSingleResult();
+	public Endereco getEnderecoPorCodigo(String cep) {
+		return this.entityManager.createQuery("from Endereco where codigo = :cep ", Endereco.class)
+				.setParameter("cep", cep).getSingleResult();
 	}
 
 	@Override

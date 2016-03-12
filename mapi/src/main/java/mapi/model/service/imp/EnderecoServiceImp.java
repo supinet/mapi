@@ -39,8 +39,8 @@ public class EnderecoServiceImp implements EnderecoService {
 	}
 
 	@Override
-	public Endereco getEnderecoPorCodigo(String codigo) {
-		return this.enderecoDao.getEnderecoPorCodigo(codigo);
+	public Endereco getEnderecoPorCodigo(String cep) {
+		return this.enderecoDao.getEnderecoPorCodigo(cep);
 	}
 
 	@Override
