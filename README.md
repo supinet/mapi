@@ -28,32 +28,48 @@ versão 0.15.1.
 
 1 - Instalar o servidor “node” dica: se desejar use o nvm (Node Version Manager) para gerenciar as versões e pacotes de cada versão do node isso pode evitar dores de cabeça.
 
-	- Formas de instalação:
+- Formas de instalação:
 
-	* scprit [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
+- scprit 
+	1.1. [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
 
-	ou
+ou
 
-	* comando no terminal do linux como root: `sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
+- comando no terminal do linux: 
+	1.2.  `sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
 
-	ou
+ou
 
-	Wget `wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
+	1.3. Wget `wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
 
-2 - agora sim instalando o servidor node com nvm:
+2 - agora sim instalando o servidor node:
 
-	terminal$: `nvm install 5.8.0`  versão mais recente
-	terminal$: `nvm install 4.4.0`  versão mais estável
+	2.1. com nvm
 
-	terminal$: mvn `use 5.8.0` comando que informa qual versão do node usar
+	- versão mais recente
 
-	ou
+		* terminal$: `nvm install 5.8.0`
+	
+	- versão mais estável
 
-	- script [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) - instala o node última versão e o npm – gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
+		* terminal$: `nvm install 4.4.0`
+
+	- comando que informa qual versão do node usar
+		* terminal$: mvn `use 5.8.0`
+
+ou
+
+	2.2. com script 
+
+		- instala o node última versão e o npm que é um gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
+
+			* [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) 
 
 3 - Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
 
-	terminal$: `npm install -g yo generator-angular-fullstack bower grunt`
+	3.1. no terminal$: 
+
+		`npm install -g yo generator-angular-fullstack bower grunt`
 
 	> o `-g` informa que é para uso global
 	> o `yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
