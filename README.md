@@ -1,19 +1,19 @@
 ## mapi (CRUD de CEP com Web Service)
 
-### O objetivo de mapi 
+###### O objetivo de mapi 
 
 > Oferecer pesquisa de CEPs do Brasil em Web Service externo qualquer e armazenamento as informações recuperadas em base de dados através de outro Web Service. 
 
-###  Contexto de uso
+######  Contexto de uso
 
 >O mapi pode ser utilizado por empresas que desejam criar um repositório próprio de gerenciamento de informações de CEP para serem consumidos de forma específica pela empresa.
 
-### Principais e vantagens de utilização: 
+###### Principais e vantagens de utilização: 
 
 > - Em um e-commerce que faça entrega somente para os CEPs previamente registrados na base de dados;
 > - Criar regras de negócios específicas para tomada de decisão para cada CEP cadastrado;
 
-### Instruções de como o projeto deve ser compilado e executado (Build & development)
+###### Instruções de como o projeto deve ser compilado e executado (Build & development)
 
 Este projeto foi gerado com o [yo angular generator](https://github.com/yeoman/generator-angular) 
 versão 0.15.1. 
@@ -22,59 +22,61 @@ versão 0.15.1.
 
 ###### Preparando o frontend
 
-0 - instalar o git `sudo apt-get install git` software de versionamento de arquivos;
+0 - instalar o git 
+
+	terminal$: `sudo apt-get install git` software de versionamento de arquivos;
 
 1 - Instalar o servidor “node” dica: se desejar use o nvm (Node Version Manager) para gerenciar as versões e pacotes de cada versão do node isso pode evitar dores de cabeça.
 
-* Formas de instalação:
+	- Formas de instalação:
 
-- scprit [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
+	* scprit [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
 
-ou
+	ou
 
-- comando no terminal do linux como root: `sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
+	* comando no terminal do linux como root: `sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
 
-ou
+	ou
 
-Wget `wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
+	Wget `wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
 
-2 - agora sim instalando o servidor node com:
+2 - agora sim instalando o servidor node com nvm:
 
-terminal$: `nvm install 5.8.0` - mais recente
-terminal$: `nvm install 4.4.0` - estável
+	terminal$: `nvm install 5.8.0`  versão mais recente
+	terminal$: `nvm install 4.4.0`  versão mais estável
 
-terminal$: mvn `use 5.8.0` - comando que informa qual versão do node usar
+	terminal$: mvn `use 5.8.0` comando que informa qual versão do node usar
 
-ou
+	ou
 
-- script [node + npm] (https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) - instala o node última versão e o npm – gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
+	- script [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) - instala o node última versão e o npm – gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
 
 3 - Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
 
-terminal$: `npm install -g yo generator-angular-fullstack bower grunt`
+	terminal$: `npm install -g yo generator-angular-fullstack bower grunt`
 
-> o `-g` informa que é para uso global
-> o `yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
-> o `bower` super importante para o gerenciamento das dependências do angular; e
-> o `grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
+	> o `-g` informa que é para uso global
+	> o `yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
+	> o `bower` super importante para o gerenciamento das dependências do angular; e
+	> o `grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
 
 Após tudo instalado e funcionando vamos checar as versões:
 
-no terminal digite: terminal$: `node -v`
-> v5.8.0
+	no terminal digite: terminal$: `node -v`
+	> v5.8.0
 
-terminal$ npm version
+	terminal$ `npm version`
 
->{ npm: '3.8.0',
->  ares: '1.10.1-DEV',
->  http_parser: '2.6.1',
->  icu: '56.1',
->  modules: '47',
->  node: '5.6.0',
->  openssl: '1.0.2f',
->  uv: '1.8.0',
->  v8: '4.6.85.31',
->  zlib: '1.2.8' }
+	>{ npm: '3.8.0',
+  		ares: '1.10.1-DEV',
+  		http_parser: '2.6.1',
+  		icu: '56.1',
+  		modules: '47',
+  		node: '5.6.0',
+	    openssl: '1.0.2f',
+	    uv: '1.8.0',
+	    v8: '4.6.85.31',
+	    zlib: '1.2.8' }
 
 ###### Preparando o backend
 
@@ -86,8 +88,8 @@ Run `grunt` for building and `grunt serve` for preview.
 Running `grunt test` will run the unit tests with karma. 
 
 ### Criando o Ambiente de Produção
-1. Instalar um sistema operacional (S.O.) [Linux] (https://www.debian.org/distrib/) ou [Windows] (https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
+1. Instalar um sistema operacional (S.O.) [Linux](https://www.debian.org/distrib/) ou [Windows](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
 2. Instalar a JRE do JAVA, de acordo com o S.O. utilizado: [JRE JAVA](http://www.java.com/pt_BR/download/manual.jsp);
 * 
-3. Instalar o servidor de aplicação [Wildfly 10 Final] (http://wildfly.org/downloads/) de acordo com o S.O;
-4. Instalar o sistema gerenciador de banco de dados [Mysql Server 5] (http://dev.mysql.com/downloads/mysql/) de acordo com o S.O.
+3. Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
+4. Instalar o sistema gerenciador de banco de dados [Mysql Server 5](http://dev.mysql.com/downloads/mysql/) de acordo com o S.O.
