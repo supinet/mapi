@@ -133,25 +133,18 @@ dentro do diretório digite `mkdir mapi`
 
 Faça o download do JDK 8
 
-1 - Em qualquer navegador vá para a página de download do [Oracle Java SE]
+1. Em qualquer navegador vá para a página de download do [Oracle Java SE]
 (http://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html);
-
-2 - Selecione Java JDK 8 download para o seu sistema operacional
-
-3 - Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
-
-4 - Copie o arquivo para a pasta cd /opt
-
-5 - Ou pela linha de comando de dentro da pasta /opt:
+2. Selecione Java JDK 8 download para o seu sistema operacional
+3. Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
+4. Copie o arquivo para a pasta cd /opt
+5. Ou pela linha de comando de dentro da pasta /opt:
 
 `sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
 `
 
-6 - Extraia o arquivo baixado dentro da pasta: `cd /opt`
-
-`sudo tar xzf jdk-*.tar.gz`
-
-7-  Instale o JDK com a forma “alternatives”, voce poderá manter outras versões no futuro:
+6. Extraia o arquivo baixado dentro da pasta: `cd /opt` digite `sudo tar xzf jdk-*.tar.gz`
+7.  Instale o JDK com a forma “alternatives”, voce poderá manter outras versões no futuro:
 
 `cd /opt/jdk1.8.0_45/`
 
@@ -180,13 +173,10 @@ e
 
 ###### Servidor de aplicativo Wildfly atende a especificação javaee7
 
-1 - Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
-
-2 - copiar o arquivo para a pasta `cd /opt` ou outra de sua preferência;
-
-3 - extrair o arquivo `sudo tar xzf wildfly*.tar.gz`
-
-4 - modificar a permissão do arquivo para permitir execução: `/opt/wildfly-10.0.0.Final/bin/run.sh` digite o comando no terminal  `sudo chmod +x run.sh`
+1. Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
+2. copiar o arquivo para a pasta `cd /opt` ou outra de sua preferência;
+3. extrair o arquivo `sudo tar xzf wildfly*.tar.gz`
+4. modificar a permissão do arquivo para permitir execução: `/opt/wildfly-10.0.0.Final/bin/run.sh` digite o comando no terminal  `sudo chmod +x run.sh`
 
 Ou utilizar o script de instalação do [wildfly-10.0.0.Final] (https://github.com/supinet/mapi/blob/master/ambientes/producao/wildfly-install.sh)
 
@@ -222,5 +212,8 @@ Ou utilizar o script de instalação do [wildfly-10.0.0.Final] (https://github.c
 
 1. Instalar um sistema operacional (S.O.) [Linux](https://www.debian.org/distrib/) ou [Windows](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
 2. Instalar a JRE do JAVA, de acordo com o S.O. utilizado: [JRE JAVA](http://www.java.com/pt_BR/download/manual.jsp);
-3. Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
+3. Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O; ou utilizar o **script de instalação** do [wildfly-10.0.0.Final] (https://github.com/supinet/mapi/blob/master/ambientes/producao/wildfly-install.sh)
 4. Instalar o sistema gerenciador de banco de dados [Mysql Server 5](http://dev.mysql.com/downloads/: mysql/) de acordo com o S.O.
+5. Copiar o `mapi.war` para a pasta `/opt/wildfly-10.0.0.Final/standalone/deployments/`
+
+**Fim**
