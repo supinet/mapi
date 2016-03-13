@@ -1,4 +1,4 @@
-### mapi (CRUD de CEP com Web Service)
+#### mapi (CRUD de CEP com Web Service)
 
 ###### O objetivo de mapi 
 
@@ -14,9 +14,6 @@
 > - Criar regras de negócios específicas para tomada de decisão para cada CEP cadastrado;
 
 ###### Instruções de como o projeto deve ser compilado e executado (Build & development)
-
-Este projeto foi gerado com o [yo angular generator](https://github.com/yeoman/generator-angular) 
-versão 0.15.1. 
 
 ###### Ambiente de desenvolvimento: S.O Ubuntu 14.04 LTS
 
@@ -73,6 +70,9 @@ ou
 
 ###### 3 Ferramentas (yeoman, grunt e bower)
 
+Este projeto foi gerado com o [yo angular generator](https://github.com/yeoman/generator-angular) 
+versão 0.15.1. 
+
 >Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
 
 3.1. no terminal$: 
@@ -109,17 +109,17 @@ Após tudo instalado e funcionando vamos checar as versões:
 		zlib: '1.2.8' }
 
 ######
-Baixando o projeto para o ambiente de desenvolvimento
+ Baixando o projeto para o ambiente de desenvolvimento
 
-1. entre no diretório `cd /home/usuario/`
+1 - entre no diretório `cd /home/usuario/`
 
 dentro do diretório digite `mkdir mapi`
 
-2. faça o clone do projeto: 
+2 - faça o clone do projeto: 
 
 `git clone git://github.com/supinet/mapi.git`
 
-3. dentro da pasta mapi digite:
+3 - dentro da pasta mapi digite:
 
 `grunt build` para realizar a compilação do projeto e depois:
 
@@ -127,15 +127,49 @@ dentro do diretório digite `mkdir mapi`
 
 >se tudo deu certo vai abrir no navegador padrão à página inicial do yeoman, clique no menu Cep e digite um CEP para buscar no servidor: http://correiosapi.apphb.com/cep/
 
+> mas se o navegador padrão não abriu, abra-o e digite http://localhost:9000/#/mapi/
 
 ###### Preparando o backend
 
+Faça o download do JDK 8
 
-Run `grunt` for building and `grunt serve` for preview. 
+1. Em qualquer navegador vá para a página de download do [Oracle Java SE](http://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html).
+2. Selecione Java JDK 8 download para o seu sistema operacional
+3. Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
+4. Copie o arquivo para a pasta cd /opt
 
-### Testing 
+Ou pela linha de comando:
 
-Running `grunt test` will run the unit tests with karma. 
+5. `sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
+`
+6. Extraia o arquivo baixado dentro da pasta: `cd /opt`
+
+`sudo tar xzf jdk-*.tar.gz`
+
+7. Instale o JDK com a forma alternatives, voce poderá manter outras versões no futuro:
+
+`cd /opt/jdk1.8.0_45/`
+`update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_05/bin/java 100
+`
+`update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_05/bin/javac 100`
+
+saída de informação será:
+
+>java -version java version "1.8.0_45" Java(TM) SE Runtime Environment (build 1.8.0_45-b14) Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
+
+Para checar se está tudo certo digite:
+
+`java -version`
+
+>java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+
+e
+
+`javac -version`
+
+>javac 1.8.0_31
 
 ### Criando o Ambiente de Produção
 1. Instalar um sistema operacional (S.O.) [Linux](https://www.debian.org/distrib/) ou [Windows](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
