@@ -34,9 +34,7 @@ terminal$: `sudo apt-get install git`
 
 - Formas de instalação:
 
-- 1.1. scprit:
-
-[mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
+- 1.1. scprit: [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
 
 ou
 
@@ -56,61 +54,59 @@ ou
 
 - versão mais recente
 
-	* terminal$: `nvm install 5.8.0`
+	* `nvm install 5.8.0`
 	
 - versão mais estável
 
-	* terminal$: `nvm install 4.4.0`
+	* `nvm install 4.4.0`
 
 - comando que informa qual versão do node usar
 
-	* terminal$: mvn `use 5.8.0`
+	* `mvn use 5.8.0`
 
 ou
 
-2.2. com script 
+2.2. com script [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) 
 
 - instala o node última versão e o npm que é um gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
 
-	* [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) 
 
+###### 3 Ferramentas (yeoman, grunt e bower)
 
-###### Ferramentas
-
-3 - Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
+Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
 
 3.1. no terminal$: 
 
-	* `npm install -g yo generator-angular-fullstack bower grunt`
+	`npm install -g yo generator-angular-fullstack bower grunt`
 
-> o `-g` informa que é para uso global
+>`-g` informa que é para uso global
 
-> o `yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
+>`yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
 
-> o `bower` super importante para o gerenciamento das dependências do angular; e
+>`bower` super importante para o gerenciamento das dependências do angular; e
 
-> o `grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
+>`grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
 
 Após tudo instalado e funcionando vamos checar as versões:
 
 - no terminal digite: 
 
-	* terminal$: `node -v`
+`node -v`
 
-		> v5.8.0
+> v5.8.0
 
-	# terminal$ `npm version`
+`npm version`
 
-		>{ npm: '3.8.0',
-	  		ares: '1.10.1-DEV',
-	  		http_parser: '2.6.1',
-	  		icu: '56.1',
-	  		modules: '47',
-	  		node: '5.6.0',
-		    openssl: '1.0.2f',
-		    uv: '1.8.0',
-		    v8: '4.6.85.31',
-		    zlib: '1.2.8' }
+>{ npm: '3.8.0',
+	ares: '1.10.1-DEV',
+	http_parser: '2.6.1',
+	icu: '56.1',
+	modules: '47',
+	node: '5.6.0',
+	openssl: '1.0.2f',
+	uv: '1.8.0',
+	v8: '4.6.85.31',
+	zlib: '1.2.8' }
 
 
 
