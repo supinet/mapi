@@ -97,7 +97,6 @@ Após tudo instalado e funcionando vamos checar as versões:
 
 `npm version`
 
-'''
 	{ npm: '3.8.0',
 		ares: '1.10.1-DEV',
 		http_parser: '2.6.1',
@@ -109,7 +108,6 @@ Após tudo instalado e funcionando vamos checar as versões:
 		v8: '4.6.85.31',
 		zlib: '1.2.8' }
 
-'''
 ######
  Baixando o projeto para o ambiente de desenvolvimento
 
@@ -140,10 +138,11 @@ Faça o download do JDK 8
 3 - . Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
 4 -. Copie o arquivo para a pasta cd /opt
 
-Ou pela linha de comando de dentro da pasta /opt:
+5 - Ou pela linha de comando de dentro da pasta /opt:
 
-5 - `sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
+`sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
 `
+
 6 - Extraia o arquivo baixado dentro da pasta: `cd /opt`
 
 `sudo tar xzf jdk-*.tar.gz`
@@ -177,13 +176,34 @@ e
 
 ###### Servidor de aplicativo Wildfly atende a especificação javaee7
 
+1 - Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
 
+2 - copiar o arquivo para a pasta `cd /opt` ou outra de sua preferência;
+
+3 - extrair o arquivo `sudo tar xzf wildfly*.tar.gz`
+
+4 - modificar a permissão do arquivo para permitir execução: `/opt/wildfly-10.0.0.CR4/bin/run.sh` digite o comando no terminal  `sudo chmod +x run.sh`
+
+Ou utilizar o script de instalação do [wildfly-10.0.0.Final] (https://github.com/supinet/mapi/blob/master/ambientes/producao/wildfly-install.sh)
+
+> o qual também irá instalar o módulo do mysql “jar” e seu respectivo drive de conexão para o qual será utilizado para conectar com o banco de dados.
+
+* Para testar se deu tudo certo execute: `/opt/wildfly-10.0.0.CR4/bin/run.sh`
+
+- deverá aparecer a seguinte saída de informação no terminal
+
+>INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 10.0.0.Final (WildFly Core 2.0.0.CR8) started in 9394ms - Started 539 of 784 services (350 services are lazy, passive or on-demand)
 
 ###### IDE de desenvolvimento
 
 > Pode ser desde o editor de texto até ferramentas altamente produtivas como [Eclipse](https://www.eclipse.org/downloads/), [IntelliJ](https://www.jetbrains.com/idea/download/#section=linux) e [Netbeans](https://netbeans.org/downloads/). Sugiro a utilização do “Eclipse”
 
+###### Compilando o backend
 
+1 - Abra o eclipse;
+2 - Escolha um workspace de sua preferência “local onde será compilado o projeto”;
+3 - Clique no menu - file - import - na janela escolha General*** _Projects_ _from_ _Folder_ e selecione a pasta onde foi clonado*** o projeto pelo comando `git clone git://github.com/supinet/mapi.git` clique em finish;
+4 - clique em cima do nome do projeto “mapi” e pressione `Alt + F5` para o maven*** atualizar dependências. 
 
 ### Criando o Ambiente de Produção
 1. Instalar um sistema operacional (S.O.) [Linux](https://www.debian.org/distrib/) ou [Windows](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
