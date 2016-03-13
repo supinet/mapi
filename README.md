@@ -1,4 +1,4 @@
-## mapi (CRUD de CEP com Web Service)
+### mapi (CRUD de CEP com Web Service)
 
 ###### O objetivo de mapi 
 
@@ -54,15 +54,15 @@ ou
 
 - versão mais recente
 
-	* `nvm install 5.8.0`
+`nvm install 5.8.0`
 	
 - versão mais estável
 
-	* `nvm install 4.4.0`
+`nvm install 4.4.0`
 
 - comando que informa qual versão do node usar
 
-	* `mvn use 5.8.0`
+`mvn use 5.8.0`
 
 ou
 
@@ -77,16 +77,19 @@ ou
 
 3.1. no terminal$: 
 
-	`npm install -g yo generator-angular-fullstack bower grunt`
+`npm install -g yo generator-angular-fullstack bower grunt-cli`
 
->`-g` informa que é para uso global
->`yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
->`bower` super importante para o gerenciamento das dependências do angular; e
->`grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
+`-g` informa que é para uso global;
+
+`yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
+
+`bower` super importante para o gerenciamento das dependências do angular; e
+
+`grunt-cli` automatizador de tarefas de minificação, compressão de imagens e muito mais.
 
 Após tudo instalado e funcionando vamos checar as versões:
 
-- no terminal digite: 
+- no terminal$ digite: 
 
 `node -v`
 
@@ -105,6 +108,24 @@ Após tudo instalado e funcionando vamos checar as versões:
 		v8: '4.6.85.31',
 		zlib: '1.2.8' }
 
+######
+Baixando o projeto para o ambiente de desenvolvimento
+
+1. entre no diretório `cd /home/usuario/`
+
+dentro do diretório digite `mkdir mapi`
+
+2. faça o clone do projeto: 
+
+`git clone git://github.com/supinet/mapi.git`
+
+3. dentro da pasta mapi digite:
+
+`grunt build` para realizar a compilação do projeto e depois:
+
+`sudo grunt serve` 
+
+>se tudo deu certo vai abrir no navegador padrão à página inicial do yeoman, clique no menu Cep e digite um CEP para buscar no servidor: http://correiosapi.apphb.com/cep/
 
 
 ###### Preparando o backend
