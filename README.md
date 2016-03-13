@@ -22,77 +22,97 @@ versão 0.15.1.
 
 ###### Preparando o frontend
 
-0 - instalar o git 
+###### GIT
 
-	terminal$: `sudo apt-get install git` software de versionamento de arquivos;
+0 - instalar o git - software de versionamento de arquivos
+
+terminal$: `sudo apt-get install git`
+
+###### NODE
 
 1 - Instalar o servidor “node” dica: se desejar use o nvm (Node Version Manager) para gerenciar as versões e pacotes de cada versão do node isso pode evitar dores de cabeça.
 
 - Formas de instalação:
 
-- scprit 
-	1.1. [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
+- 1.1. scprit:
+
+[mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
 
 ou
 
-- comando no terminal do linux: 
-	1.2.  `sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
+- 1.2. comando no terminal do linux: 
 
-ou
+`sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
 
-	1.3. Wget `wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
+ou 
+
+- 1.3. Wget:
+
+`wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash`
 
 2 - agora sim instalando o servidor node:
 
-	2.1. com nvm
+2.1. com nvm
 
-	- versão mais recente
+- versão mais recente
 
-		* terminal$: `nvm install 5.8.0`
+	* terminal$: `nvm install 5.8.0`
 	
-	- versão mais estável
+- versão mais estável
 
-		* terminal$: `nvm install 4.4.0`
+	* terminal$: `nvm install 4.4.0`
 
-	- comando que informa qual versão do node usar
-		* terminal$: mvn `use 5.8.0`
+- comando que informa qual versão do node usar
+
+	* terminal$: mvn `use 5.8.0`
 
 ou
 
-	2.2. com script 
+2.2. com script 
 
-		- instala o node última versão e o npm que é um gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
+- instala o node última versão e o npm que é um gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
 
-			* [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) 
+	* [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) 
+
+
+###### Ferramentas
 
 3 - Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
 
-	3.1. no terminal$: 
+3.1. no terminal$: 
 
-		`npm install -g yo generator-angular-fullstack bower grunt`
+	* `npm install -g yo generator-angular-fullstack bower grunt`
 
-	> o `-g` informa que é para uso global
-	> o `yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
-	> o `bower` super importante para o gerenciamento das dependências do angular; e
-	> o `grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
+> o `-g` informa que é para uso global
+
+> o `yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
+
+> o `bower` super importante para o gerenciamento das dependências do angular; e
+
+> o `grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
 
 Após tudo instalado e funcionando vamos checar as versões:
 
-	no terminal digite: terminal$: `node -v`
-	> v5.8.0
+- no terminal digite: 
 
-	terminal$ `npm version`
+	* terminal$: `node -v`
 
-	>{ npm: '3.8.0',
-  		ares: '1.10.1-DEV',
-  		http_parser: '2.6.1',
-  		icu: '56.1',
-  		modules: '47',
-  		node: '5.6.0',
-	    openssl: '1.0.2f',
-	    uv: '1.8.0',
-	    v8: '4.6.85.31',
-	    zlib: '1.2.8' }
+		> v5.8.0
+
+	# terminal$ `npm version`
+
+		>{ npm: '3.8.0',
+	  		ares: '1.10.1-DEV',
+	  		http_parser: '2.6.1',
+	  		icu: '56.1',
+	  		modules: '47',
+	  		node: '5.6.0',
+		    openssl: '1.0.2f',
+		    uv: '1.8.0',
+		    v8: '4.6.85.31',
+		    zlib: '1.2.8' }
+
+
 
 ###### Preparando o backend
 
