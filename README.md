@@ -32,7 +32,7 @@ terminal$: `sudo apt-get install git`
 
 1 - Instalar o servidor “node” dica: se desejar use o nvm (Node Version Manager) para gerenciar as versões e pacotes de cada versão do node isso pode evitar dores de cabeça.
 
-- Formas de instalação:
+-Formas de instalação:
 
 - 1.1. scprit: [mvn](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/nvm-install.sh)
 
@@ -68,23 +68,20 @@ ou
 
 2.2. com script [node + npm](https://github.com/supinet/mapi/blob/master/ambientes/desenvolvimento/node-npm-install.sh) 
 
-- instala o node última versão e o npm que é um gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
+>instala o node última versão e o npm que é um gerenciador de pacotes e apps, permite compartilhar códigos com outros desenvolvedores;
 
 
 ###### 3 Ferramentas (yeoman, grunt e bower)
 
-Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
+>Instalar as ferramentas que irão gerenciar todo o processo de desenvolvimento do frontend e gerenciamento de dependências e tarefas como (minificação, compressão de imagens, etc)
 
 3.1. no terminal$: 
 
 	`npm install -g yo generator-angular-fullstack bower grunt`
 
 >`-g` informa que é para uso global
-
 >`yo generator-angular-fullstack` é o yeoman que cria ambientes organizados para desenvolvimento do angular no nosso caso;
-
 >`bower` super importante para o gerenciamento das dependências do angular; e
-
 >`grunt` automatizador de tarefas de minificação, compressão de imagens e muito mais.
 
 Após tudo instalado e funcionando vamos checar as versões:
@@ -97,16 +94,16 @@ Após tudo instalado e funcionando vamos checar as versões:
 
 `npm version`
 
->{ npm: '3.8.0',
-	ares: '1.10.1-DEV',
-	http_parser: '2.6.1',
-	icu: '56.1',
-	modules: '47',
-	node: '5.6.0',
-	openssl: '1.0.2f',
-	uv: '1.8.0',
-	v8: '4.6.85.31',
-	zlib: '1.2.8' }
+	>{ npm: '3.8.0',
+		ares: '1.10.1-DEV',
+		http_parser: '2.6.1',
+		icu: '56.1',
+		modules: '47',
+		node: '5.6.0',
+		openssl: '1.0.2f',
+		uv: '1.8.0',
+		v8: '4.6.85.31',
+		zlib: '1.2.8' }
 
 
 
