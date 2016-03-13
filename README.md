@@ -97,7 +97,8 @@ Após tudo instalado e funcionando vamos checar as versões:
 
 `npm version`
 
-	>{ npm: '3.8.0',
+'''
+	{ npm: '3.8.0',
 		ares: '1.10.1-DEV',
 		http_parser: '2.6.1',
 		icu: '56.1',
@@ -108,6 +109,7 @@ Após tudo instalado e funcionando vamos checar as versões:
 		v8: '4.6.85.31',
 		zlib: '1.2.8' }
 
+'''
 ######
  Baixando o projeto para o ambiente de desenvolvimento
 
@@ -133,24 +135,26 @@ dentro do diretório digite `mkdir mapi`
 
 Faça o download do JDK 8
 
-1. Em qualquer navegador vá para a página de download do [Oracle Java SE](http://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html).
-2. Selecione Java JDK 8 download para o seu sistema operacional
-3. Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
-4. Copie o arquivo para a pasta cd /opt
+1 - Em qualquer navegador vá para a página de download do [Oracle Java SE](http://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html).
+2 -. Selecione Java JDK 8 download para o seu sistema operacional
+3 - . Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
+4 -. Copie o arquivo para a pasta cd /opt
 
-Ou pela linha de comando:
+Ou pela linha de comando de dentro da pasta /opt:
 
-5. `sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
+5 - `sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
 `
-6. Extraia o arquivo baixado dentro da pasta: `cd /opt`
+6 - Extraia o arquivo baixado dentro da pasta: `cd /opt`
 
 `sudo tar xzf jdk-*.tar.gz`
 
-7. Instale o JDK com a forma alternatives, voce poderá manter outras versões no futuro:
+7-  Instale o JDK com a forma “alternatives”, voce poderá manter outras versões no futuro:
 
 `cd /opt/jdk1.8.0_45/`
+
 `update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_05/bin/java 100
 `
+
 `update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_05/bin/javac 100`
 
 saída de informação será:
@@ -171,9 +175,18 @@ e
 
 >javac 1.8.0_31
 
+###### Servidor de aplicativo Wildfly atende a especificação javaee7
+
+
+
+###### IDE de desenvolvimento
+
+> Pode ser desde o editor de texto até ferramentas altamente produtivas como [Eclipse](https://www.eclipse.org/downloads/), [IntelliJ](https://www.jetbrains.com/idea/download/#section=linux) e [Netbeans](https://netbeans.org/downloads/). Sugiro a utilização do “Eclipse”
+
+
+
 ### Criando o Ambiente de Produção
 1. Instalar um sistema operacional (S.O.) [Linux](https://www.debian.org/distrib/) ou [Windows](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
 2. Instalar a JRE do JAVA, de acordo com o S.O. utilizado: [JRE JAVA](http://www.java.com/pt_BR/download/manual.jsp);
-* 
 3. Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
-4. Instalar o sistema gerenciador de banco de dados [Mysql Server 5](http://dev.mysql.com/downloads/mysql/) de acordo com o S.O.
+4. Instalar o sistema gerenciador de banco de dados [Mysql Server 5](http://dev.mysql.com/downloads/: mysql/) de acordo com o S.O.
