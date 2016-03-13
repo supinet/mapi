@@ -127,16 +127,20 @@ dentro do diretório digite `mkdir mapi`
 
 >se tudo deu certo vai abrir no navegador padrão à página inicial do yeoman, clique no menu Cep e digite um CEP para buscar no servidor: http://correiosapi.apphb.com/cep/
 
-> mas se o navegador padrão não abriu, abra-o e digite http://localhost:9000/#/mapi/
+> mas se o navegador padrão não abriu, abra-o e digite `http://localhost:9000/#/mapi/`
 
 ###### Preparando o backend
 
 Faça o download do JDK 8
 
-1 - Em qualquer navegador vá para a página de download do [Oracle Java SE](http://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html).
-2 -. Selecione Java JDK 8 download para o seu sistema operacional
-3 - . Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
-4 -. Copie o arquivo para a pasta cd /opt
+1 - Em qualquer navegador vá para a página de download do [Oracle Java SE]
+(http://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html);
+
+2 - Selecione Java JDK 8 download para o seu sistema operacional
+
+3 - Copie a URL com a extensão do arquivo tar.gz não o RPM (redhat).
+
+4 - Copie o arquivo para a pasta cd /opt
 
 5 - Ou pela linha de comando de dentro da pasta /opt:
 
@@ -182,7 +186,7 @@ e
 
 3 - extrair o arquivo `sudo tar xzf wildfly*.tar.gz`
 
-4 - modificar a permissão do arquivo para permitir execução: `/opt/wildfly-10.0.0.CR4/bin/run.sh` digite o comando no terminal  `sudo chmod +x run.sh`
+4 - modificar a permissão do arquivo para permitir execução: `/opt/wildfly-10.0.0.Final/bin/run.sh` digite o comando no terminal  `sudo chmod +x run.sh`
 
 Ou utilizar o script de instalação do [wildfly-10.0.0.Final] (https://github.com/supinet/mapi/blob/master/ambientes/producao/wildfly-install.sh)
 
@@ -200,12 +204,22 @@ Ou utilizar o script de instalação do [wildfly-10.0.0.Final] (https://github.c
 
 ###### Compilando o backend
 
-1 - Abra o eclipse;
-2 - Escolha um workspace de sua preferência “local onde será compilado o projeto”;
-3 - Clique no menu - file - import - na janela escolha General*** _Projects_ _from_ _Folder_ e selecione a pasta onde foi clonado*** o projeto pelo comando `git clone git://github.com/supinet/mapi.git` clique em finish;
-4 - clique em cima do nome do projeto “mapi” e pressione `Alt + F5` para o maven*** atualizar dependências. 
+1. Abra o eclipse;
+2. Escolha um workspace de sua preferência “local onde será compilado o projeto”;
+3. Clique no menu - file - import - na janela escolha **General** **_Projects_ _from_ _Folder_** e selecione a pasta onde foi **clonado** o projeto pelo comando `git clone git://github.com/supinet/mapi.git` clique em finish;
+4. clique em cima do nome do projeto “mapi” e pressione `Alt + F5` para o maven*** atualizar dependências;
+5. Clique no meu **Project** - Clean e já janela clique em **OK** para compilar o projeto;
+5. Adicione o servidor wildfly-10.0.0.Final que foi instalado na pasta `/opt/wildfly-10.0.0.CR4/` pressione as telcas `Crtl + 3` e digite a palavra `server` clique na opção `view servers`;
+6. Abaixo aparecerá uma aba e um espaço em branco para adicionar o servidor;
+7. Clique com o botão direito do mouse e New – Server;
+8. Procure por wildfly 10 e **Next**, novamente **Next**;
+9. **_ATENÇÃO_** clique no projeto _mapi_ no lado esquerdo **Available:** e depois no botão “Add > “;
+10. Marque o servidor Wildfly e clique com botão direito do mouse e depois clique em **Start**;
+
+> O webservice deverá ser iniciado e você poderá testar a aplicação pelo `http://localhost:9000/#/mapi/`
 
 ### Criando o Ambiente de Produção
+
 1. Instalar um sistema operacional (S.O.) [Linux](https://www.debian.org/distrib/) ou [Windows](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=5842);
 2. Instalar a JRE do JAVA, de acordo com o S.O. utilizado: [JRE JAVA](http://www.java.com/pt_BR/download/manual.jsp);
 3. Instalar o servidor de aplicação [Wildfly 10 Final](http://wildfly.org/downloads/) de acordo com o S.O;
